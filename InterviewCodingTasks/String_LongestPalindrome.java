@@ -8,7 +8,7 @@ public class String_LongestPalindrome {
 
 
     //Solution 1: (easier but involves using data structure)
-    public String longestPalindrome1(String str) {
+    public static String longestPalindrome1(String str) {
         String longest = "";
         ArrayList<String> list = new ArrayList<>();
 
@@ -38,7 +38,7 @@ public class String_LongestPalindrome {
 
 
     // solution 2: Harder but does not need a data structure
-    public String longestPalindrome2(String str) {
+    public static String longestPalindrome2(String str) {
         String result = "";
         for (int i = 0; i < str.length(); i = i + 1) {
             int b = i;
@@ -65,6 +65,14 @@ public class String_LongestPalindrome {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        String str="abba racecar   anna   babayega durak";
+        System.out.println("str = " + str);
+        System.out.println("longestPalindrome2(str) = " + longestPalindrome2(str));
+        System.out.println("longestPalindrome1(str) = " + longestPalindrome1(str));
+
     }
 
 }
