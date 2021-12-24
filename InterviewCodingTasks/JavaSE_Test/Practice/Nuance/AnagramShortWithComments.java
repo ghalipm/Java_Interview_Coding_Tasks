@@ -1,9 +1,7 @@
 package JavaSE_Test.Practice.Nuance;
 
 import java.util.Arrays;
-
 public class AnagramShortWithComments {
-
 // get char array for a given string and sort the char array
     public static Character[] stringToCharsSorted(String str){
         Character[] charArr=new Character[str.length()];
