@@ -10,12 +10,12 @@ package JavaSE_Test.Practice.GeeksForGeeks;
 
 public class CatalanNumbersShort {
 
-    public int factorial(int n){
-        return (n==0)?1:(n*factorial(n-1));
+    public int f(int n){  //f: factorial
+        return (n==0)?1:(n*f(n-1));
     }
 
     public int catalanWithFactorial(int n){
-        return factorial(2*n)/((n+1)*factorial(n)*factorial(n));
+        return f(2*n)/( (n+1)*f(n)*f(n) );
     }
 
     public static void main(String[] args) {
