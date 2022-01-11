@@ -1,4 +1,4 @@
-package JavaSE_Test.Practice.GeeksForGeeks;
+package JavaSE_Test.Practice.LeetCode;
 
 import java.util.Arrays;
 
