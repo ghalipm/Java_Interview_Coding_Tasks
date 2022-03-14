@@ -19,13 +19,15 @@ package JavaSE_Test.Practice.RecursiveSequences;
  * https://www.johndcook.com/blog/2018/03/24/squared-digit-sum/
  * Take any positive integer n and sum the squares of its digits. If you repeat this operation,
  * eventually you’ll either end at 1 or cycle between the eight values 4, 16, 37, 58, 89, 145, 42, and 20.
+ * 4 ==> 16 ==> 37 ==> 58 ==> 89 ==> 145 ==> 42 ==> 20==>4. So it is a closed cycle.
  *
  * For example, pick n = 389. Then 3² + 8² + 9² = 9 + 64 + 81 = 154.
  *
  * Next, 1² + 5² + 4² = 1 + 25 + 16 = 42, and now we’re at one of the eight special values.
- * You can easily verify that once you land on one of these values you keep cycling.
+ * You can easily verify that once you land on one of these values if you keep cycling.
  */
 public class PerfectNumberRecursive {
+
     // finds the sum of squares of digits:
     public static int digitSquareSumFinder(int n){
         int squareSum=0;
@@ -36,8 +38,8 @@ public class PerfectNumberRecursive {
         return squareSum;
     }
 
-    //My observation:
-    //int[] attractors={1, 4};
+    //My observation or the fact: {4, 16, 37, 58, 89, 145, 42, 20}=={4} (two sets are digitSumSquare equivalent)
+    //int[] attractors={1, 4}={1*1, 2*2};
     // determines if number n is perfect or not
     // If the sum of squares of digits is 1, then it is perfect;
     // if the sum of squares of digits is 4, then it is not perfect;
@@ -47,10 +49,8 @@ public class PerfectNumberRecursive {
     // until it reaches either 1=1*1 or 4=2*2.
     public static boolean isPerfectNumber(int n){
         int newNum=0;
-        //System.out.println("digitSquareSumFinder(n) = " + digitSquareSumFinder(n));
         if(digitSquareSumFinder(n)==1) {return true;}
         else if(digitSquareSumFinder(n)==4){
-            //System.out.println("The number is NOT a perfect number!");
             return false;
         }else{
           return isPerfectNumber(digitSquareSumFinder(n));
@@ -59,20 +59,20 @@ public class PerfectNumberRecursive {
         }
 
     public static void main(String[] args) {
-        int n=100; // n=2,3,4,5,6,8,9,11,12,14,15,16,17,18,20;   1, 7, 13, 19; 23,28; 31,32;44,49;
+        int n=2000; // n=2,3,4,5,6,8,9,11,12,14,15,16,17,18,20;   1, 7, 13, 19; 23,28; 31,32;44,49;
         System.out.println("Original number n =: " + n);
         //System.out.println("isPerfectNumber("+n+") = " + isPerfectNumber(n));
         int count=0;
 
         for (int i = 1; i <=n ; i++) {
-            if(isPerfectNumber(i)==true) {
-                //System.out.println("isPerfectNumber(" + i + ") = " + isPerfectNumber(i));
+            if(isPerfectNumber(i)) {
                 System.out.print(i+",");
                 count++;
             }
         }
         System.out.println("=================");
-        System.out.println("isPerfectNumber(1977) = " + isPerfectNumber(1977));
+        System.out.println("isPerfectNumber(1995) = " + isPerfectNumber(1995));
+        System.out.println("isPerfectNumber(2022) = " + isPerfectNumber(2022));
         System.out.println("=================");
         System.out.println("count = " + count);
         System.out.println("density="+ (double)count/n);
