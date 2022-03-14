@@ -1,7 +1,7 @@
 package JavaSE_Test.Practice.RecursiveSequences;
 
 /**
- * Bakhtiar Semseddin  11:36 AM
+ *
  * Write an algorithm to determine if a number n is ‘perfect’.
  * A ‘perfect’ number is a number defined by the following process:
  * Starting with any positive integer, replace the number by the sum of the squares of its digits.
@@ -71,6 +71,8 @@ public class PerfectNumberRecursive {
                 count++;
             }
         }
+        System.out.println("=================");
+        System.out.println("isPerfectNumber(1977) = " + isPerfectNumber(1977));
         System.out.println("=================");
         System.out.println("count = " + count);
         System.out.println("density="+ (double)count/n);

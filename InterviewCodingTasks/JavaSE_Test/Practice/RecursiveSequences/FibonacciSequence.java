@@ -8,7 +8,7 @@ public class FibonacciSequence {
             int n=5;
             if(numberQualified(n)) {
                 System.out.println("The " + n + "th term of the Fibonacci sequence :" + fib(n));
-                System.out.println("fibRecursive("+n+") = " + fibRecursive(n));
+                System.out.println("fibRecursive("+n+") = " + f(n));
             }else{
                 System.out.println("Invalid Input! Index number must be positive integer!");
             }
@@ -41,11 +41,15 @@ public class FibonacciSequence {
         }
      */
 
-    public static int fibRecursive(int num){ // left side of the function
+
+    public static int f(int n){ // left side of the function
         // below we have to return only the right hand side of the function
-        return ( num==1 || num==0 )? 1 : fibRecursive(num-1)+ fibRecursive(num-2);
+        return ( n==1 || n==0 )? 1 : f(n-1)+ f(n-2);
     }
 
+    public int Sum(int n){
+        return (n==1)?1:Sum(n-1)+n;
+    }
         //regular way of finding Fibonacci sequence:
         public static int fib(int num){
             int x=0;
