@@ -64,12 +64,12 @@ class SmallestInteger {
         }
 
         // min element > 1:
-        if (minOfArray > 1) return smallestInt;
+        if (minOfArray > smallestInt) {return smallestInt;}
         // max element negative:
-        if (maxOfArray <= 0) return smallestInt;
+        if (maxOfArray <smallestInt) { return smallestInt;}
 
         List<Integer> list= new ArrayList<>();
-       for (int num : arr) list.add(num);  // O(n)
+       for (int num : arr) {list.add(num); } // O(n)
 
        while (list.contains(smallestInt)) { smallestInt++;} //O(n)
 
